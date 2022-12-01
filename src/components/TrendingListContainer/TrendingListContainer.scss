@@ -1,0 +1,44 @@
+.trending-videos{
+    .trending-card-video{
+        display: flex;
+        align-items: center;
+        height: 350px;
+        border: 1px solid white;
+        flex-basis: 50% 50%;
+        margin: 10vh 0;
+        .video{
+            width: 40%;
+            height: 90%;
+            padding: 1vh 1vw;
+            iframe{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .info{
+            padding: 1vh 1vw;
+            width: 60%;
+            .categories{
+                display: flex;
+                .categorie{
+                    margin: 0 1vw;
+                    padding: 1vh 1vw;
+                    border: 1px solid white;
+                    border-radius: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    p{
+                        padding: 0;
+                        margin: 0 0 0 1vw;
+                    }
+                    .color{
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,21 +1,3 @@
 #home{
-    width: 1200px;
-    .trending-videos{
-        .card-video{
-            display: flex;
-            align-items: center;
-            height: 350px;
-            border: 1px solid white;
-            flex-basis: 50% 50%;
-            .video{
-                width: 40%;
-                height: 90%;
-                padding: 1vh 1vw;
-            }
-            p{
-                padding: 1vh 1vw;
-                width: 60%;
-            }
-        }
-    }
+    max-width: 1200px;
 }
