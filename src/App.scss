@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Open Sans", sans-serif;
+}
+$border: rgb(0, 0, 0);
+#app {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.light {
+  .text {
+    color: black;
+  }
+  .background {
+    animation-name: darkToLight;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+  }
+}
+.dark {
+  .text {
+    color: white;
+  }
+  .background {
+    animation-name: lightToDark;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes darkToLight {
+  0% {
+    background-color: black;
+  }
+  100.0% {
+    background-color: white;
+  }
+}
+@keyframes lightToDark {
+    0% {
+      background-color: white;
+    }
+    100.0% {
+      background-color: black;
+    }
+  }
