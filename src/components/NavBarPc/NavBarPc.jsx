@@ -6,7 +6,7 @@ import { CiLight, CiDark } from "react-icons/ci";
 import { VscHome, VscSymbolMethod, VscTerminalDebian, VscKey } from "react-icons/vsc";
 
 export const NavBarPc = () => {
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { theme, setTheme, color } = useContext(ThemeContext);
 
   return (
     <div id="nav-bar-pc">
@@ -15,13 +15,7 @@ export const NavBarPc = () => {
       </div>
       <div
         className="menu"
-        style={{
-          background: `${
-            theme === "light"
-              ? "rgba(0, 0, 0, 0.019)"
-              : "rgba(250, 250, 250, 0.059)"
-          }`,
-        }}
+        style={{ background: `${color.background}`}}
       >
         <div className="brand">
           <FcDebian className="logo" />
