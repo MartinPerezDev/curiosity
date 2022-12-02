@@ -3,7 +3,7 @@
         display: flex;
         align-items: center;
         height: 350px;
-        border: 1px solid white;
+        border-radius: 10px;
         flex-basis: 50% 50%;
         margin: 10vh 0;
         .video{
@@ -23,7 +23,6 @@
                 .categorie{
                     margin: 0 1vw;
                     padding: 1vh 1vw;
-                    border: 1px solid white;
                     border-radius: 10px;
                     display: flex;
                     justify-content: center;
