@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 
-export const Trending = ({ title, description, videoUrl, categories, loading }) => {
+export const Trending = ({ title, description, videoUrl, categories }) => {
   const { color } = useContext(ThemeContext)
 
   return (

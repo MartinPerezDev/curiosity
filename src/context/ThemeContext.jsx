@@ -11,11 +11,13 @@ export const ThemeProvider = ({children}) => {
 
     const lightColor = {
       background: "rgba(0, 0, 0, 0.019)",
-      border: "#6b6a6a"
+      border: "#6b6a6a",
+      backgroundTextLoading: "rgba(0, 0, 0, 0.247)"
     }
     const darkColor = {
       background: "rgba(250, 250, 250, 0.059)",
-      border: "#a3a3a3"
+      border: "#a3a3a3",
+      backgroundTextLoading: "rgba(255, 255, 255, 0.247)"
     }
 
     useEffect(() => {

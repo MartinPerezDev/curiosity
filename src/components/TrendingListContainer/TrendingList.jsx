@@ -1,12 +1,12 @@
 import React from 'react'
 import { Trending } from './Trending'
 
-export const TrendingList = ({articles, loading}) => {
+export const TrendingList = ({articles}) => {
   return (
     <>
       {
         articles.map((article)=>(
-            <Trending {...article} key={article.id} loading={loading}/>
+            <Trending {...article} key={article.id} />
         ))
       }  
     </>

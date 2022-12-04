@@ -2,6 +2,7 @@ import { collection, getDocs, query, where } from 'firebase/firestore'
 import React, { useEffect, useState } from 'react'
 import { db } from '../../db/firestore.db'
 import { TrendingList } from './TrendingList'
+import { TrendingLoading } from './TrendingLoading'
 import './TrendingListContainer.scss'
 
 export const TrendingListContainer = () => {
@@ -34,7 +35,16 @@ export const TrendingListContainer = () => {
 
   return (
     <div className="trending-videos">
-        <TrendingList articles={articles} loading={loading}/>
+        <div className='title'>
+            <div className='circle'></div>
+            <h2>Trending Live</h2>
+        </div>
+        {
+            loading ?
+            <TrendingLoading />
+            :
+            <TrendingList articles={articles} />
+        }
     </div>
   )
 }
