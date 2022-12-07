@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 
 export const TrendingLoading = () => {
@@ -13,9 +13,9 @@ export const TrendingLoading = () => {
         <iframe
           src={`https://www.youtube.com/embed/asd`}
           title="El fin del espacio"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       </div>
       <div className="info">

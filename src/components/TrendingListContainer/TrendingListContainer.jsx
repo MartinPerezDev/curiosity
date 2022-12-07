@@ -1,5 +1,5 @@
 import { collection, getDocs, query, where } from 'firebase/firestore'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { db } from '../../db/firestore.db'
 import { TrendingList } from './TrendingList'
 import { TrendingLoading } from './TrendingLoading'
@@ -34,7 +34,7 @@ export const TrendingListContainer = () => {
     
 
   return (
-    <div className="trending-videos">
+    <div id="trending-videos">
         <div className='title'>
             <div className='circle'></div>
             <h2>Trending Live</h2>

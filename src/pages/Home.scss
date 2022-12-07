@@ -1,4 +1,38 @@
 #home{
     max-width: 1200px;
     width: 100%;
+    .banner{
+        display: flex;
+        width: 100%;
+        height: 450px;
+        margin: 5vh 0 0 0;
+        justify-content: flex-start;
+        align-items: center;
+        border-radius: 10px;
+        .banner-text{
+            width: 40%;
+            padding: 0 2vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            p{
+                font-style: italic;
+                font-size: 2rem;
+            }
+            .button{
+                font-size: 1rem;
+                border-radius: 5px;
+                padding: 1vh 1.5vw;
+            }
+        }
+        .banner-img{
+            width: 60%;
+            height: 100%;
+            background-color: rgb(83, 63, 124);
+            background-image: url(https://firebasestorage.googleapis.com/v0/b/curiosity-app-cec1f.appspot.com/o/banner%2Fbanner-home.webp?alt=media&token=ae7dd1f4-19b5-4559-8279-a6671a87be01);
+            border-bottom-right-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+    }
 }

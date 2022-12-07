@@ -10,9 +10,9 @@ export const Trending = ({ title, description, videoUrl, categories }) => {
         <iframe
           src={`https://www.youtube.com/embed/${videoUrl}`}
           title={title}
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       </div>
       <div className="info">
@@ -20,8 +20,8 @@ export const Trending = ({ title, description, videoUrl, categories }) => {
         <p>{description}</p>
         <div className="categories">
           {
-            categories.map((categorie)=>(
-              <div className="categorie" style={{border: `1.5px solid ${color.border}`}}>
+            categories.map((categorie, i)=>(
+              <div className="categorie" style={{border: `1.5px solid ${color.border}`}} key={i}>
                 <div className="color" style={{backgroundColor: categorie.color}}></div>
                 <p>{categorie.name}</p>
               </div>
