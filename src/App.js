@@ -4,6 +4,7 @@ import { Home } from "./pages/Home";
 import { Footer } from "./components/Footer/Footer";
 import { Route, Routes } from "react-router-dom";
 import { Error } from "./components/Error/Error";
+import { Curiosidades } from './pages/Curiosidades';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <NavBarPc />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/curiosidades" element={<Curiosidades />} />
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer />

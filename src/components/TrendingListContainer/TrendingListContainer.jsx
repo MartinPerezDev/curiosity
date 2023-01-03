@@ -5,7 +5,7 @@ import { TrendingList } from './TrendingList'
 import { TrendingLoading } from './TrendingLoading'
 import './TrendingListContainer.scss'
 
-export const TrendingListContainer = () => {
+export const TrendingListContainer = ({type}) => {
 
     const [articles, setArticles] = useState([])
     const [loading, setLoading] = useState(true)
@@ -15,8 +15,8 @@ export const TrendingListContainer = () => {
         const getProducts = async() =>{
             try {
                 const itemsCollection = collection(db,'articles');
-                const queryItems = query(itemsCollection, where('trending', '==', true)) ;
-                const response = await getDocs(queryItems);
+                const queryItems = query(itemsCollection, where('trending', '==', true));
+                const response = await getDocs( type === "trending" ? queryItems : itemsCollection);
                 const docs = response.docs;
                 const data = docs.map(doc => {
                     return {
@@ -30,7 +30,7 @@ export const TrendingListContainer = () => {
             }
         }
         getProducts()
-    }, [])
+    }, [type])
     
 
   return (

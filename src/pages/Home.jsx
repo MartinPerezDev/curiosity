@@ -15,7 +15,7 @@ export const Home = () => {
         </div>
         <div className="banner-img"></div>
       </div>
-      <TrendingListContainer trending={true}/>
+      <TrendingListContainer type={"trending"}/>
     </div>
   );
 };
