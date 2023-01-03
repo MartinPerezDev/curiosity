@@ -1,13 +1,21 @@
-import './App.scss';
-import { NavBarPc } from './components/NavBarPc/NavBarPc';
-import { Home } from './pages/Home'
+import "./App.scss";
+import { NavBarPc } from "./components/NavBarPc/NavBarPc";
+import { Home } from "./pages/Home";
+import { Footer } from "./components/Footer/Footer";
+import { Route, Routes } from "react-router-dom";
+import { Error } from "./components/Error/Error";
 
 function App() {
-
   return (
-    <div id="app" className='background text'>
+    <div id="app" className="background text">
+      <div id="app-padding">
         <NavBarPc />
-        <Home />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+        <Footer />
+      </div>
     </div>
   );
 }

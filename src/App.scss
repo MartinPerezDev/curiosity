@@ -12,7 +12,12 @@ body {
   flex-direction: column;
   align-items: center;
   user-select: none;
+  #app-padding{
+    max-width: 1200px;
+  }
 }
+
+//Mode Dark & Animations
 .light {
   .text {
     color: rgb(32, 32, 32);
