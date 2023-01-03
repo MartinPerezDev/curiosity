@@ -9,12 +9,14 @@ export const ThemeProvider = ({ children }) => {
 
   useEffect(() => {
     const lightColor = {
+      text: "rgb(32, 32, 32)",
       background: "rgba(0, 0, 0, 0.019)",
       backgroundBanner: "rgba(7, 0, 0, 0.13)",
       border: "#6b6a6a",
       backgroundTextLoading: "rgba(0, 0, 0, 0.247)",
     };
     const darkColor = {
+      text: "rgb(216, 216, 211)",
       background: "rgba(250, 250, 250, 0.059)",
       backgroundBanner: "rgba(0, 0, 0, 0.158)",
       border: "#a3a3a3",

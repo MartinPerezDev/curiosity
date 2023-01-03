@@ -4,6 +4,7 @@ import "./NavBarPc.scss";
 import { ThemeContext } from "../../context/ThemeContext";
 import { CiLight, CiDark } from "react-icons/ci";
 import { VscHome, VscSymbolMethod, VscTerminalDebian, VscKey } from "react-icons/vsc";
+import { Link } from "react-router-dom";
 
 export const NavBarPc = () => {
   const { theme, setTheme, color } = useContext(ThemeContext);
@@ -22,10 +23,10 @@ export const NavBarPc = () => {
           <p>Curiosity</p>
         </div>
         <ul>
-          <div><VscHome /><p>Inicio</p></div>
-          <div><VscSymbolMethod /><p>Curiosidades</p></div>
-          <div><VscTerminalDebian /><p>Sobre Nosotros</p></div>
-          <div><VscKey /><p>Iniciar Sesion</p></div>
+          <Link to={"/"} className="link" style={{ color: `${color.text}`}}><VscHome /><p>Inicio</p></Link>
+          <Link to={"/curiosidades"} className="link" style={{ color: `${color.text}`}}><VscSymbolMethod /><p>Curiosidades</p></Link>
+          <Link to={"/sobre-nosotros"} className="link" style={{ color: `${color.text}`}}><VscTerminalDebian /><p>Sobre Nosotros</p></Link>
+          <Link to={"/"} className="link" style={{ color: `${color.text}`}}><VscKey /><p>Iniciar Sesion</p></Link>
         </ul>
         <div className="theme-button" onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
             {
