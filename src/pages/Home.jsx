@@ -10,7 +10,7 @@ export const Home = () => {
     <div id="home">
       <div className="banner" style={{backgroundColor: color.backgroundBanner}}>
         <div className="banner-text">
-          <p>Disfruta de un recopilatorio de curiosidades sobre ciencia y tecnologia en un solo lugar!</p>
+          <p>Disfruta de un recopilatorio de las mejores curiosidades sobre ciencia y tecnologia en un solo lugar!</p>
           <div className="button" style={{border: `1px solid ${color.border}`}}>Empecemos!</div>
         </div>
         <div className="banner-img"></div>
