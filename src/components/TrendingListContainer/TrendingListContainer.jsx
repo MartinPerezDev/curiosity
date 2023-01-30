@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { TrendingList } from './TrendingList'
 import { TrendingLoading } from './TrendingLoading'
 import './TrendingListContainer.scss'

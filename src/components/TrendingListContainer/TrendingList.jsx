@@ -1,5 +1,5 @@
 import { Trending } from "./Trending";
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Pagination } from "../Pagination/Pagination";
 import { ArticlesContext } from "./../../context/ArticlesContext";
 

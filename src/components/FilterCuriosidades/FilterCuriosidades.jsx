@@ -1,6 +1,6 @@
 import "./FilterCuriosidades.scss"
-import { useEffect, useState } from 'react';
-import { collection, query, getDocs } from 'firebase/firestore';
+import React, { useEffect, useState } from 'react';
+import { collection, getDocs } from 'firebase/firestore';
 import { db } from './../../db/firestore.db';
 import { useContext } from 'react';
 import { ThemeContext } from './../../context/ThemeContext';
@@ -8,7 +8,7 @@ import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import { ArticlesContext } from './../../context/ArticlesContext';
 import { BsTrash } from "react-icons/bs";
 
-export const FilterCuriosidades = ({tools}) => {
+export const FilterCuriosidades = () => {
     const { handleFilter, resetFilter } = useContext(ArticlesContext);
     const { color } = useContext(ThemeContext)
     const [categories, setCategories] = useState([])

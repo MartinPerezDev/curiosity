@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore"
 
 const firebaseConfig = {
-  apiKey: process.env.API_KEY,
-  authDomain: "curiosity-app-cec1f.firebaseapp.com",
-  projectId: "curiosity-app-cec1f",
-  storageBucket: "curiosity-app-cec1f.appspot.com",
-  messagingSenderId: "189664894102",
-  appId: process.env.APP_ID
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROYECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGIN_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 export const db = getFirestore(initializeApp(firebaseConfig))

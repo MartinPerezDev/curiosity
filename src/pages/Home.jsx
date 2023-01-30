@@ -1,3 +1,4 @@
+import React from "react";
 import "./Home.scss";
 import { TrendingListContainer } from "../components/TrendingListContainer/TrendingListContainer";
 import { useContext } from "react";

@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import React ,{ createContext, useState } from "react";
 import { collection, query, where, getDocs } from 'firebase/firestore';
 import { db } from './../db/firestore.db';
 
@@ -7,11 +7,11 @@ export const ArticlesContext = createContext();
 export const ArticlesProvider = ({ children }) => {
   const [articles, setArticles] = useState([]);
   const [articlesPag, setArticlesPag] = useState([])
-  const [maxArticles, setMaxArticles] = useState(5)
   const [filterArticles, setFilterArticles] = useState([])
   const [typeArticle, setTypeArticle] = useState("")
   const [countPag, setCountPag] = useState(1);
   const [loading, setLoading] = useState(true)
+  const maxArticles = 5
 
 
   const getArticles = async (type) => {

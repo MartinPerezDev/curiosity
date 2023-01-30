@@ -3,7 +3,7 @@ import { FcDebian } from "react-icons/fc";
 import "./NavBarPc.scss";
 import { ThemeContext } from "../../context/ThemeContext";
 import { CiLight, CiDark } from "react-icons/ci";
-import { VscHome, VscSymbolMethod, VscTerminalDebian, VscKey } from "react-icons/vsc";
+import { VscHome, VscSymbolMethod, VscTerminalDebian } from "react-icons/vsc";
 import { AiOutlineMail } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
@@ -45,7 +45,7 @@ export const NavBarPc = () => {
         <ul>
           {
             categoriesMenu.map(categorie=>{
-              return <Link to={categorie.route} className="link" style={{ color: `${color.text}`}}>
+              return <Link key={categorie.name} to={categorie.route} className="link" style={{ color: `${color.text}`}}>
                 {categorie.icon}
                 <p>{categorie.name}</p>
               </Link>
