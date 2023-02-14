@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
-import { FcDebian } from "react-icons/fc";
 import {
   AiOutlineYoutube,
   AiOutlineGitlab,
   AiOutlineEdit,
 } from "react-icons/ai";
 import "./Footer.scss";
+import logoCuriosity from "../../assets/logo/curiosity.png"
 
 export const Footer = () => {
   const { color } = useContext(ThemeContext);
@@ -14,7 +14,7 @@ export const Footer = () => {
   return (
     <div id="footer" style={{ backgroundColor: color.background, border: `2px solid ${color.backgroundBanner}` }}>
       <div className="brand">
-        <FcDebian className="logo" />
+        <img src={logoCuriosity} className="logo" alt="logo curiosity"/>
         <p>Curiosity - Web de curiosidades</p>
       </div>
       <div className="links">

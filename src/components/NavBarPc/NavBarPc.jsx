@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import { FcDebian } from "react-icons/fc";
 import "./NavBarPc.scss";
 import { ThemeContext } from "../../context/ThemeContext";
 import { CiLight, CiDark } from "react-icons/ci";
 import { VscHome, VscSymbolMethod, VscTerminalDebian } from "react-icons/vsc";
 import { AiOutlineMail } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import logoCuriosity from "../../assets/logo/curiosity.png"
 
 export const NavBarPc = () => {
   const { theme, setTheme, color } = useContext(ThemeContext);
@@ -35,11 +35,11 @@ export const NavBarPc = () => {
   return (
     <div id="nav-bar-pc">
       <div className="banner">
-        <FcDebian className="logo" />
+        <img src={logoCuriosity} className="logo" alt="logo-curiosity"/>
       </div>
       <div className="menu" style={{ background: `${color.background}`}}>
         <div className="brand">
-          <FcDebian className="logo" />
+          <img src={logoCuriosity} className="logo" alt="logo-curiosity"/>
           <p>Curiosity</p>
         </div>
         <ul>
