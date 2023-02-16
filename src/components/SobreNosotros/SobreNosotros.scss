@@ -2,26 +2,34 @@
     padding: 50px .5vw;
     .disclaimer{
         .authors{
-            padding: 20px 0;
+            padding: 5px 0;
             .author{
-                .redes{
-                    display: flex;
-                    .link{
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        padding: 0 10px;
-                        margin: 0 10px;
-                        border-radius: 10px;
-                        text-decoration: none;
-                        .icon{
-                            font-size: 30px;
-                        }
-                        p{
-                            padding-left: 5px;
-                        }
-                    }
-                }
+                
+            }
+        }
+    }
+    .text{
+        
+    }
+    .redes{
+        display: flex;
+        padding: 20px 0;
+        .link{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 10px;
+            margin: 0 10px;
+            border-radius: 10px;
+            text-decoration: none;
+            .icon{
+                font-size: 30px;
+            }
+            .image{
+                filter: grayscale(100%);
+            }
+            p{
+                padding-left: 5px;
             }
         }
     }

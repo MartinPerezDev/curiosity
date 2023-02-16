@@ -1,28 +1,17 @@
-import "./SobreNosotros.scss";
-import { AiOutlineYoutube, AiOutlineInstagram } from "react-icons/ai";
 import React, { useContext } from "react";
+
 import { ThemeContext } from "./../../context/ThemeContext";
+import { Authors } from "./Authors";
+import { Links } from "./Links";
+import { authors, myLinks } from "../../data/sobreNosotros";
+
+import "./SobreNosotros.scss";
 
 export const SobreNosotros = () => {
   const { color } = useContext(ThemeContext);
 
-  const authors = [
-    {
-      name: "Kurzgesagt",
-      links: [
-        {
-          name: "Youtube",
-          icon: <AiOutlineYoutube className="icon" />,
-          url: "https://www.youtube.com/@kurzgesagt",
-        },
-        {
-          name: "Instagram",
-          icon: <AiOutlineInstagram className="icon" />,
-          url: "https://www.youtube.com/@kurzgesagt",
-        },
-      ],
-    },
-  ];
+  
+
   return (
     <div id="sobre-nosotros">
       <div className="disclaimer">
@@ -33,32 +22,7 @@ export const SobreNosotros = () => {
           oficiales autores de dicho material:
         </h3>
         <div className="authors">
-          {authors.map((author) => {
-            return (
-              <div className="author">
-                <p>{author.name}</p>
-                <div className="redes">
-                  {author.links.map((link) => {
-                    return (
-                      <a
-                        style={{
-                          color: color.text,
-                          border: `1px solid ${color.border}`,
-                        }}
-                        href={link.url}
-                        target="_blank"
-                        className="link"
-                        rel="noreferrer"
-                      >
-                        {link.icon}
-                        <p>{link.name}</p>
-                      </a>
-                    );
-                  })}
-                </div>
-              </div>
-            );
-          })}
+          <Authors authors={authors} color={color} />
         </div>
       </div>
       <div className="text">
@@ -67,6 +31,7 @@ export const SobreNosotros = () => {
           puedes visitar nuestras demas webs:
         </h3>
         <h3>o colaborar en el siguiente link:</h3>
+        <Links links={myLinks} color={color} />
       </div>
     </div>
   );
