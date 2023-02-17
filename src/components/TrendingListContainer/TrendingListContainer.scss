@@ -1,69 +1,71 @@
-#trending-videos{
+#trending-videos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  .title {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    .title{
+    align-items: center;
+    padding: 5vh 0 5vh 0;
+    .circle {
+      width: 20px;
+      height: 20px;
+      border-radius: 100%;
+      background-color: red;
+    }
+    h2 {
+      font-size: 1.5rem;
+      padding: 0 1vw;
+    }
+  }
+  .trending-card-video {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 350px;
+    border-radius: 10px;
+    margin: 0 0 10vh 0;
+    box-sizing: border-box;
+    .video {
+      width: 40%;
+      height: 90%;
+      padding: 1vh 1vw;
+      iframe {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .info {
+      padding: 1vh 1vw;
+      width: 60%;
+      .categories {
         display: flex;
-        align-items: center;
-        padding: 5vh 0 5vh 0;
-        .circle{
+        .categorie {
+          margin: 0 1vw;
+          padding: 1vh 1vw;
+          border-radius: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          p {
+            padding: 0;
+            margin: 0 0 0 1vw;
+          }
+          .color {
             width: 20px;
             height: 20px;
             border-radius: 100%;
-            background-color: red;
+          }
         }
-        h2{
-            font-size: 1.5rem;
-            padding: 0 1vw;
-        }
+      }
     }
-    .trending-card-video{
-        display: flex;
-        align-items: center;
-        width: 100%;
-        height: 350px;
-        border-radius: 10px;
-        margin: 0 0 10vh 0;
-        .video{
-            width: 40%;
-            height: 90%;
-            padding: 1vh 1vw;
-            iframe{
-                width: 100%;
-                height: 100%;
-            }
-        }
-        .info{
-            padding: 1vh 1vw;
-            width: 60%;
-            .categories{
-                display: flex;
-                .categorie{
-                    margin: 0 1vw;
-                    padding: 1vh 1vw;
-                    border-radius: 10px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    p{
-                        padding: 0;
-                        margin: 0 0 0 1vw;
-                    }
-                    .color{
-                        width: 20px;
-                        height: 20px;
-                        border-radius: 100%;
-                    }
-                }
-            }
-        }
+  }
+  .trending-card-video-loading {
+    .info {
+      h2,
+      p {
+        color: rgba(255, 255, 255, 0);
+      }
     }
-    .trending-card-video-loading{
-        .info{
-            h2, p{
-                color: rgba(255, 255, 255, 0);
-            }
-        }
-    }
+  }
 }
