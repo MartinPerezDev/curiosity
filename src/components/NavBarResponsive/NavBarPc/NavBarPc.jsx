@@ -1,36 +1,10 @@
-import React, { useContext } from "react";
-import "./NavBarPc.scss";
-import { ThemeContext } from "../../context/ThemeContext";
-import { CiLight, CiDark } from "react-icons/ci";
-import { VscHome, VscSymbolMethod, VscTerminalDebian } from "react-icons/vsc";
-import { AiOutlineMail } from "react-icons/ai";
+import React from "react";
 import { Link } from "react-router-dom";
-import logoCuriosity from "../../assets/logo/curiosity.png"
+import { CiLight, CiDark } from "react-icons/ci";
 
-export const NavBarPc = () => {
-  const { theme, setTheme, color } = useContext(ThemeContext);
-  const categoriesMenu = [
-    {
-      name: "Inicio",
-      route: "/",
-      icon: <VscHome />
-    },
-    {
-      name: "Curiosidades",
-      route: "/curiosidades",
-      icon: <VscSymbolMethod />
-    },
-    {
-      name: "Sobre Nosotros",
-      route: "/sobre-nosotros",
-      icon: <VscTerminalDebian />
-    },
-    {
-      name: "Contacto",
-      route: "/contacto",
-      icon: <AiOutlineMail />
-    }
-  ]
+import "./NavBarPc.scss";
+
+export const NavBarPc = ({ logoCuriosity, theme, setTheme, color, categoriesMenu }) => {
 
   return (
     <div id="nav-bar-pc">
