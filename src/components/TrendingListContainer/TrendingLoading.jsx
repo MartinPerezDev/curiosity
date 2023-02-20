@@ -6,7 +6,7 @@ export const TrendingLoading = () => {
 
   return (
     <div
-      className="trending-card-video trending-card-video-loading"
+      className="box-card-video box-card-video-loading"
       style={{ border: `2px solid ${color.border}` }}
     >
       <div className="video">

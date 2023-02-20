@@ -5,7 +5,7 @@ export const Trending = ({ title, description, videoUrl, categories }) => {
   const { color } = useContext(ThemeContext)
 
   return (
-    <div className="trending-card-video" style={{border: `2px solid ${color.border}`}}>
+    <div className="box-card-video" style={{border: `2px solid ${color.border}`}}>
       <div className="video">
         <iframe
           src={`https://www.youtube.com/embed/${videoUrl}`}

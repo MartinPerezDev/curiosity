@@ -1,4 +1,4 @@
-#trending-videos {
+#box-videos {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,7 +18,7 @@
       padding: 0 1vw;
     }
   }
-  .trending-card-video {
+  .box-card-video {
     display: flex;
     align-items: center;
     width: 100%;
@@ -60,11 +60,30 @@
       }
     }
   }
-  .trending-card-video-loading {
+  .box-card-video-loading {
     .info {
       h2,
       p {
         color: rgba(255, 255, 255, 0);
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  #box-videos{
+    .box-card-video{
+      height: auto;
+      flex-direction: column;
+      .video{
+        width: 100%;
+      }
+      .info{
+        width: 96%;
+        padding: 2%;
+        h2{
+          margin: 5px 0;
+        }
       }
     }
   }
