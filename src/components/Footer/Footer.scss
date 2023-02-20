@@ -49,3 +49,19 @@
     margin: 0 2.5%;
   }
 }
+
+@media (max-width: 750px) {
+  #footer{
+    flex-direction: column;
+    height: auto;
+    .brand{
+      .logo{
+        padding: 0 5px 0 0;
+      }
+    }
+    .links{
+      width: 40%;
+      padding: 10px 1vw;
+    }
+  }
+}
