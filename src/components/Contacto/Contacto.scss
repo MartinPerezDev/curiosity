@@ -1,22 +1,38 @@
-#contacto{
+#contacto {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 50px 1vw;
+  .form-contacto {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    padding: 50px 1vw;
-    .form-contacto{
-        display: flex;
-        flex-direction: column;
-        width: 50%;
-        input, textarea{
-            margin: 1vh 0;
-            padding: 10px;
-            border-radius: 5px;
-        }
-        .submit{
-            width: 20%;
-            &:hover{
-                cursor: pointer;
-            }
-        }
+    width: 50%;
+    input,
+    textarea {
+      margin: 1vh 0;
+      padding: 10px;
+      border-radius: 5px;
     }
+    .submit {
+      width: 20%;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  #contacto {
+    width: 95%;
+    margin: 0 2.5%;
+  }
+}
+@media (max-width: 1200px) {
+  #contacto {
+    padding: 50px 0;
+    .form-contacto {
+      width: 99%;
+    }
+  }
 }
