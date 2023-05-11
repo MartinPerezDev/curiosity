@@ -3,20 +3,28 @@ import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdReturnLeft } from "react-icons/io";
 
-export const ButtonToggleMenu = ({ icon, handleToggleMenu, color }) => {
+export const ButtonToggleMenu = ({
+  icon,
+  handleToggleMenu,
+  text,
+  backgroundOpacity,
+}) => {
+
+  const getButtonProps = () => ({
+    className: "button button-left",
+    style: { color: text, background: backgroundOpacity },
+  });
+
+  const iconComponent =
+    icon === "hamburguer" ? (
+      <GiHamburgerMenu {...getButtonProps()} />
+    ) : (
+      <IoMdReturnLeft {...getButtonProps()} />
+    );
+
   return (
     <div className="toggle" onClick={handleToggleMenu}>
-      {icon === "hamburguer" ? (
-        <GiHamburgerMenu
-          className="button button-left"
-          style={{ color: color.text, background: color.backgroundOpacity }}
-        />
-      ) : (
-        <IoMdReturnLeft
-          className="button button-left"
-          style={{ color: color.text, background: color.backgroundOpacity }}
-        />
-      )}
+      {iconComponent}
     </div>
   );
 };

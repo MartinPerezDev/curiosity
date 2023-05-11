@@ -8,11 +8,9 @@ import { NavBarMobile } from "./NavBarMobile/NavBarMobile";
 import { NavBarPc } from "./NavBarPc/NavBarPc";
 import { ThemeContext } from "./../../context/ThemeContext";
 
-import logoCuriosity from "../../assets/logo/curiosity.png";
-
 export const NavBarResponsive = () => {
   const { theme, setTheme, color } = useContext(ThemeContext);
-  const isMobile = useMediaQuery({ maxWidth: 750 });
+  const isSmallScreen = useMediaQuery({ maxWidth: 750 });
   const categoriesMenu = [
     {
       name: "Inicio",
@@ -35,8 +33,16 @@ export const NavBarResponsive = () => {
       icon: <AiOutlineMail />,
     },
   ];
-  const props = { logoCuriosity, theme, setTheme, color, categoriesMenu };
-  return (
-    <>{isMobile ? <NavBarMobile {...props} /> : <NavBarPc {...props} />}</>
+  const getPropsNavBar = () => ({
+    theme,
+    setTheme,
+    color,
+    categoriesMenu,
+  });
+
+  return isSmallScreen ? (
+    <NavBarMobile {...getPropsNavBar()} />
+  ) : (
+    <NavBarPc {...getPropsNavBar()} />
   );
 };

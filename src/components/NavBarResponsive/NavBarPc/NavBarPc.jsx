@@ -1,39 +1,44 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 
 import { CiLight, CiDark } from "react-icons/ci";
 
 import "./NavBarPc.scss";
+import { LogoCuriosity } from "../../Utils/LogoCuriosity";
+import { CategoriesLink } from "../CategoriesLink";
 
-export const NavBarPc = ({ logoCuriosity, theme, setTheme, color, categoriesMenu }) => {
+export const NavBarPc = ({ theme, setTheme, color, categoriesMenu }) => {
+  const { text, background } = color;
+
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
+
+  const getPropsCategoriesMenu = () => ({
+    type: "pc",
+    categoriesMenu,
+    text,
+  });
+
+  const ThemeIcon =
+    theme === "light" ? (
+      <CiDark className="button" />
+    ) : (
+      <CiLight className="button" />
+    );
 
   return (
     <div id="nav-bar-pc">
       <div className="banner">
-        <img src={logoCuriosity} className="logo" alt="logo-curiosity"/>
+        <LogoCuriosity />
       </div>
-      <div className="menu" style={{ background: `${color.background}`}}>
+      <div className="menu" style={{ backgroundColor: background }}>
         <div className="brand">
-          <img src={logoCuriosity} className="logo" alt="logo-curiosity"/>
+          <LogoCuriosity />
           <p>Curiosity</p>
         </div>
-        <ul>
-          {
-            categoriesMenu.map(categorie=>{
-              return <NavLink key={categorie.name} to={categorie.route} className="link" activeClassName="active" style={{ color: `${color.text}`}}>
-                {categorie.icon}
-                <p>{categorie.name}</p>
-              </NavLink>
-            })
-          }
-        </ul>
-        <div className="theme-button" onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
-            {
-              theme === "light" ? 
-              <CiDark className="button"/>
-              :
-              <CiLight className="button"/>
-            }   
+        <CategoriesLink {...getPropsCategoriesMenu()} />
+        <div className="theme-button" onClick={toggleTheme}>
+          {ThemeIcon}
         </div>
       </div>
     </div>

@@ -4,55 +4,66 @@ import "./NavBarMobile.scss";
 import { ButtonToggleTheme } from "./ButtonToggleTheme";
 import { LogoCuriosity } from "../../Utils/LogoCuriosity";
 import { ButtonToggleMenu } from "./ButtonToggleMenu";
-import { CategoriesMenu } from "./CategoriesMenu";
+import { CategoriesLink } from "../CategoriesLink";
 
-export const NavBarMobile = ({
-  theme,
-  setTheme,
-  color,
-  categoriesMenu,
-}) => {
+export const NavBarMobile = ({ theme, setTheme, color, categoriesMenu }) => {
   const [toggleMenu, setToggleMenu] = useState(null);
+  const { border, text, backgroundOpacity } = color;
 
   const handleToggleMenu = () => {
     setToggleMenu(!toggleMenu);
   };
 
+  const getMenuClassName = () => {
+    if (toggleMenu === null) {
+      return "menu-mobile";
+    } else if (toggleMenu === false) {
+      return "menu-mobile close";
+    } else {
+      return "menu-mobile open";
+    }
+  };
+
+  const getMenuProps = () => ({
+    className: getMenuClassName(),
+    style: {
+      backgroundColor: backgroundOpacity,
+      borderRight: `2px solid ${border}`,
+      borderBottom: `2px solid ${border}`,
+    },
+  });
+
+  const getMenuPropsToggle = () => ({
+    handleToggleMenu,
+    color,
+    text,
+    backgroundOpacity,
+  });
+
+  const getThemePropsToggle = () => ({
+    theme,
+    setTheme,
+    text,
+    backgroundOpacity,
+  });
+
+  const getPropsCategoriesMenu = () => ({
+    type: "mobile",
+    categoriesMenu,
+    handleToggleMenu,
+    text,
+  });
+
   return (
     <div id="nav-bar-mobile">
       <div className="banner">
-        <ButtonToggleMenu
-          icon="hamburguer"
-          handleToggleMenu={handleToggleMenu}
-          color={color}
-        />
-        <LogoCuriosity styles={"logo"} />
-        <ButtonToggleTheme theme={theme} setTheme={setTheme} color={color} />
+        <ButtonToggleMenu icon="hamburguer" {...getMenuPropsToggle()} />
+        <LogoCuriosity />
+        <ButtonToggleTheme {...getThemePropsToggle()} />
       </div>
-      <div
-        className={
-          toggleMenu === null
-            ? "menu-mobile"
-            : toggleMenu === false
-            ? "menu-mobile close"
-            : "menu-mobile open"
-        }
-        style={{
-          backgroundColor: color.backgroundOpacity,
-          borderRight: `2px solid ${color.border}`,
-          borderBottom: `2px solid ${color.border}`,
-        }}
-      >
-        <ButtonToggleMenu
-          icon="return"
-          handleToggleMenu={handleToggleMenu}
-          color={color}
-        />
-        <CategoriesMenu
-          categoriesMenu={categoriesMenu}
-          handleToggleMenu={handleToggleMenu}
-          color={color}
-        />
+      <div title="box menu" {...getMenuProps()}>
+        <ButtonToggleMenu icon="return" {...getMenuPropsToggle()} />
+        <CategoriesLink {...getPropsCategoriesMenu()} />
       </div>
     </div>
   );
