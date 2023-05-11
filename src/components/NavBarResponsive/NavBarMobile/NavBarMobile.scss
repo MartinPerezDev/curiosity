@@ -17,23 +17,30 @@
       height: 40px;
     }
     .toggle {
-      width: 40px;
+      width: 50px;
       height: 40px;
-      margin: 1vh 1vh;
       .button {
-        width: 70%;
-        height: 70%;
+        width: 80%;
+        height: 80%;
         padding: 10%;
-        margin: 2%;
-        background-color: rgba(128, 128, 128, 0.105);
         border-radius: 100%;
+      }
+      .button-left{
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+      .button-right{
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
       }
     }
   }
   .menu-mobile {
     background-color: rgba(0, 0, 0, 0.863);
     width: 200px;
-    height: 100vh;
+    height: auto;
+    padding-bottom: 10vh;
+    border-bottom-right-radius: 5px;
     position: absolute;
     z-index: 1;
     top: 0;
@@ -44,12 +51,15 @@
       display: flex;
       align-items: center;
       .button {
-        width: 20px;
-        height: 20px;
+        width: 25px;
+        height: 25px;
         padding: 10px;
-        margin: 2%;
         background-color: rgba(128, 128, 128, 0.105);
         border-radius: 100%;
+      }
+      .button-left{
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
       }
     }
     .nav{
@@ -58,6 +68,7 @@
       .link{
         display: flex;
         align-items: center;
+        text-decoration: none;
         margin: 15px 0;
         padding: 0 10px;
         p{

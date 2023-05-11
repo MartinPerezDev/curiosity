@@ -1,14 +1,15 @@
 import React from "react";
-import "./App.scss";
+
 import { Home } from "./pages/Home";
+import { Curiosidades } from './pages/Curiosidades';
 import { Footer } from "./components/Footer/Footer";
 import { Route, Routes } from "react-router-dom";
 import { Error } from "./components/Error/Error";
-import { Curiosidades } from './pages/Curiosidades';
 import { SobreNosotros } from './components/SobreNosotros/SobreNosotros';
 import { Contacto } from './components/Contacto/Contacto';
 import { NavBarResponsive } from "./components/NavBarResponsive/NavBarResponsive";
 
+import "./App.scss";
 
 function App() {
 

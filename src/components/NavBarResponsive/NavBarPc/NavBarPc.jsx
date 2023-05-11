@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
 import { CiLight, CiDark } from "react-icons/ci";
 
 import "./NavBarPc.scss";
@@ -19,10 +20,10 @@ export const NavBarPc = ({ logoCuriosity, theme, setTheme, color, categoriesMenu
         <ul>
           {
             categoriesMenu.map(categorie=>{
-              return <Link key={categorie.name} to={categorie.route} className="link" style={{ color: `${color.text}`}}>
+              return <NavLink key={categorie.name} to={categorie.route} className="link" activeClassName="active" style={{ color: `${color.text}`}}>
                 {categorie.icon}
                 <p>{categorie.name}</p>
-              </Link>
+              </NavLink>
             })
           }
         </ul>

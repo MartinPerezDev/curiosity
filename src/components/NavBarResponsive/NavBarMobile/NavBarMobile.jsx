@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import { CiLight, CiDark } from "react-icons/ci";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { BsArrowReturnLeft } from "react-icons/bs";
 
 import "./NavBarMobile.scss";
-import { Link } from "react-router-dom";
+import { ButtonToggleTheme } from "./ButtonToggleTheme";
+import { LogoCuriosity } from "../../Utils/LogoCuriosity";
+import { ButtonToggleMenu } from "./ButtonToggleMenu";
+import { CategoriesMenu } from "./CategoriesMenu";
 
 export const NavBarMobile = ({
-  logoCuriosity,
   theme,
   setTheme,
   color,
@@ -20,55 +19,41 @@ export const NavBarMobile = ({
   };
 
   return (
-    <>
-      <div id="nav-bar-mobile">
-        <div className="banner">
-          <div className="toggle">
-            <GiHamburgerMenu
-              onClick={handleToggleMenu}
-              className="button"
-              style={{ background: "gray" }}
-            />
-          </div>
-          <img src={logoCuriosity} className="logo" alt="logo-curiosity" />
-          <div
-            className="toggle"
-            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-          >
-            <CiDark className="button" style={{ background: "gray" }} />
-          </div>
-        </div>
-        <div
-          className={
-            toggleMenu === null
-              ? "menu-mobile"
-              : toggleMenu === false
-              ? "menu-mobile close"
-              : "menu-mobile open"
-          }
-        >
-          <div className="toggle" onClick={handleToggleMenu}>
-            <BsArrowReturnLeft
-              className="button"
-              style={{ background: "gray" }}
-            />
-          </div>
-          <div className="nav">
-            {categoriesMenu.map((categorie) => (
-              <Link
-                onClick={handleToggleMenu}
-                key={categorie.name}
-                to={categorie.route}
-                className="link"
-                style={{ color: "white" }}
-              >
-                {categorie.icon}
-                <p>{categorie.name}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
+    <div id="nav-bar-mobile">
+      <div className="banner">
+        <ButtonToggleMenu
+          icon="hamburguer"
+          handleToggleMenu={handleToggleMenu}
+          color={color}
+        />
+        <LogoCuriosity styles={"logo"} />
+        <ButtonToggleTheme theme={theme} setTheme={setTheme} color={color} />
       </div>
-    </>
+      <div
+        className={
+          toggleMenu === null
+            ? "menu-mobile"
+            : toggleMenu === false
+            ? "menu-mobile close"
+            : "menu-mobile open"
+        }
+        style={{
+          backgroundColor: color.backgroundOpacity,
+          borderRight: `2px solid ${color.border}`,
+          borderBottom: `2px solid ${color.border}`,
+        }}
+      >
+        <ButtonToggleMenu
+          icon="return"
+          handleToggleMenu={handleToggleMenu}
+          color={color}
+        />
+        <CategoriesMenu
+          categoriesMenu={categoriesMenu}
+          handleToggleMenu={handleToggleMenu}
+          color={color}
+        />
+      </div>
+    </div>
   );
 };
