@@ -1,11 +1,15 @@
-import React from 'react'
-import "./Curiosidades.scss"
-import { TrendingListContainer } from './../components/TrendingListContainer/TrendingListContainer';
+import React from "react";
+
+import { ArticlesListContainer } from "../components/ArticlesListContainer/ArticlesListContainer";
+
+import "./Curiosidades.scss";
 
 export const Curiosidades = () => {
+  const propType = "all";
+
   return (
-    <div id='curiosidades'>
-        <TrendingListContainer type={"all"}/>
+    <div id="curiosidades">
+      <ArticlesListContainer type={propType} />
     </div>
-  )
-}
+  );
+};
