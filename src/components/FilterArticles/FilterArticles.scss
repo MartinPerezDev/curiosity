@@ -11,6 +11,7 @@
     margin: 0 10px;
     h2 {
       font-size: 15px;
+      padding-right: 5px;
     }
     .delete-filter {
       display: flex;
@@ -57,6 +58,11 @@
     }
   }
 }
+.categoriesDefault {
+  height: 45px;
+  width: 150px;
+  overflow: hidden;
+}
 .categoriesLow {
   animation-name: low;
   animation-duration: 0.1s;
@@ -64,12 +70,12 @@
 }
 .categoriesLowFilter {
   animation-name: lowFilter;
-  animation-duration: 0.3s;
+  animation-duration: 0.4s;
   animation-fill-mode: forwards;
 }
 .categoriesHigh {
   animation-name: high;
-  animation-duration: 0.3s;
+  animation-duration: 0.4s;
   animation-fill-mode: forwards;
 }
 @keyframes low {
@@ -111,8 +117,8 @@
 
 @media (max-width: 1000px) {
   #filter-curiosidades {
-    .categories{
-        justify-content: flex-start;
+    .categories {
+      justify-content: flex-start;
     }
   }
 }

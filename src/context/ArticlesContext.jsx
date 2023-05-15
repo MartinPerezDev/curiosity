@@ -13,10 +13,28 @@ export const ArticlesProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const maxArticles = 5;
   const originalArticles = useRef([]);
+  const categories = useRef([]);
 
   useEffect(() => {
     getAllArticles();
+    getCategories();
   }, []);
+
+  const getCategories = async() => {
+    try {
+      const categoriesCollection = collection(db, "categories");
+      const res = await getDocs(categoriesCollection);
+      let data = res.docs.map((doc) => {
+        return {
+          ...doc.data(),
+          id: doc.id,
+        };
+      });
+      categories.current = [...data];
+    } catch (error) {
+      console.log(`Error al intentar conectar con el servidor: ${error}`);
+    }
+  };
 
   const calculatePageCount = (data) => {
     setCountPag(Math.ceil(data.length / maxArticles));
@@ -71,6 +89,7 @@ export const ArticlesProvider = ({ children }) => {
         articlesPag,
         maxArticles,
         countPag,
+        categories,
         setArticlesPag,
         setTypeArticle,
         getTrendingArticles,

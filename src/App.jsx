@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Home } from "./pages/Home";
-import { Curiosidades } from './pages/Curiosidades';
+import { Curiosities } from './pages/Curiosities';
 import { Footer } from "./components/Footer/Footer";
 import { Route, Routes } from "react-router-dom";
 import { Error } from "./components/Error/Error";
@@ -19,7 +19,7 @@ function App() {
         <NavBarResponsive />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/curiosidades" element={<Curiosidades />} />
+          <Route path="/curiosidades" element={<Curiosities />} />
           <Route path="/sobre-nosotros" element={<SobreNosotros />} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="*" redirect={<Error />} />

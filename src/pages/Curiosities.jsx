@@ -2,9 +2,9 @@ import React from "react";
 
 import { ArticlesListContainer } from "../components/ArticlesListContainer/ArticlesListContainer";
 
-import "./Curiosidades.scss";
+import "./Curiosities.scss";
 
-export const Curiosidades = () => {
+export const Curiosities = () => {
   const propType = "all";
 
   return (

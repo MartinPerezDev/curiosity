@@ -3,7 +3,7 @@ import React, { useContext, useEffect } from "react";
 import { ArticlesContext } from "../../context/ArticlesContext";
 import { ArticlesList } from "./ArticlesList";
 import { ArticlesLoading } from "./ArticlesLoading";
-import { FilterCuriosidades } from "../FilterCuriosidades/FilterCuriosidades";
+import { FilterArticles } from "../FilterArticles/FilterArticles";
 
 import "./ArticlesListContainer.scss";
 
@@ -12,9 +12,7 @@ export const ArticlesListContainer = ({ type }) => {
 
   const title = typeArticle === "trending" ? "Trending Live" : "Curiosidades";
 
-  const filterCuriosidades = typeArticle !== "trending" && (
-    <FilterCuriosidades />
-  );
+  const filterArticles = typeArticle !== "trending" && <FilterArticles />;
 
   const curiositiesList = loading ? <ArticlesLoading /> : <ArticlesList />;
 
@@ -28,7 +26,7 @@ export const ArticlesListContainer = ({ type }) => {
         <div className="circle"></div>
         <h2>{title}</h2>
       </div>
-      {filterCuriosidades}
+      {filterArticles}
       {curiositiesList}
     </div>
   );
