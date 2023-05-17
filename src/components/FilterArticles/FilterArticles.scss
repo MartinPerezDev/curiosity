@@ -1,124 +1,86 @@
-#filter-curiosidades {
+#filter-articles {
+  position: relative;
+  width: auto;
+  height: 50px;
+  margin-bottom: 40px;
   display: flex;
-  flex-direction: column;
-  border-radius: 7px;
-  margin: 0 0 30px 0;
-  .categories-text {
+  align-items: center;
+  .filter {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-    width: 300px;
-    margin: 0 10px;
-    h2 {
-      font-size: 15px;
-      padding-right: 5px;
-    }
-    .delete-filter {
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      padding: 0 10px;
-      .icon-delete {
-        padding: 10px 10px;
-        margin: 0 2px;
-        font-size: 22px;
-      }
-      .icon-delete:hover {
-        background-color: rgba(255, 0, 0, 0.158);
-      }
-    }
-  }
-  .categories-text:hover {
-    cursor: pointer;
-  }
-  .categories {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    flex-wrap: wrap;
-    .categorie {
-      margin: 2vh 1vw;
-      padding: 1vh 1vw;
-      border-radius: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      p {
-        padding: 0;
-        margin: 0 0 0 1vw;
-      }
-      .color {
-        width: 20px;
-        height: 20px;
-        border-radius: 100%;
-      }
-    }
-    .categorie:hover {
+    height: 100%;
+    &:hover {
       cursor: pointer;
     }
+    h3 {
+      padding: 0 10px;
+    }
   }
-}
-.categoriesDefault {
-  height: 45px;
-  width: 150px;
-  overflow: hidden;
-}
-.categoriesLow {
-  animation-name: low;
-  animation-duration: 0.1s;
-  animation-fill-mode: forwards;
-}
-.categoriesLowFilter {
-  animation-name: lowFilter;
-  animation-duration: 0.4s;
-  animation-fill-mode: forwards;
-}
-.categoriesHigh {
-  animation-name: high;
-  animation-duration: 0.4s;
-  animation-fill-mode: forwards;
-}
-@keyframes low {
-  from {
-    height: 45px;
-    width: 300px;
-    overflow: hidden;
+  .icon-filter {
+    padding: 0 10px;
+    height: 100%;
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(0, 0, 0, 0.459);
+    }
   }
-  to {
-    height: 45px;
-    width: 150px;
-    overflow: hidden;
+  .thrash {
+    display: flex;
+    align-items: center;
+    height: 70%;
+    margin: 0 5px;
+    border-radius: 5px;
+    p {
+      padding: 0 5px;
+    }
   }
-}
-@keyframes lowFilter {
-  from {
-    height: 200px;
-    width: 100%;
-    overflow: hidden;
-  }
-  to {
-    height: 45px;
-    width: 300px;
-    overflow: hidden;
-  }
-}
-@keyframes high {
-  from {
-    height: 45px;
-    width: 300px;
-    overflow: hidden;
-  }
-  to {
+  .box-filter {
+    position: absolute;
+    width: 500px;
     height: auto;
-    width: 100%;
-    overflow: hidden;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    top: 0;
+    margin-top: 50px;
+    margin-left: -1px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    .box-categorie {
+      min-width: 100px;
+      height: 50px;
+      margin: 20px 10px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      &:hover {
+        cursor: pointer;
+      }
+      .circle {
+        width: 20px;
+        height: 20px;
+        margin-left: 10px;
+        border-radius: 100%;
+      }
+      p {
+        padding: 0 10px;
+      }
+    }
   }
+}
+.border-parcial {
+  border-radius: 5px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.border-complete{
+  border-radius: 5px;
 }
 
-@media (max-width: 1000px) {
-  #filter-curiosidades {
-    .categories {
-      justify-content: flex-start;
+@media screen and (max-width: 600px) {
+  #filter-articles{
+    .box-filter{
+      max-width: 85vw;
     }
   }
 }

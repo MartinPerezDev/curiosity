@@ -10,68 +10,73 @@ import "./filterArticles.scss";
 export const FilterArticles = () => {
   const { handleFilter, resetFilter, categories } = useContext(ArticlesContext);
   const { color } = useContext(ThemeContext);
-  const { border } = color;
-  const [typeCategories, setTypeCategories] = useState("");
-  const [toggleCategories, setToggleCategories] = useState(false);
+  const { border, backgroundOpacity } = color;
+  const [isOpen, setIsOpen] = useState(false);
+  const [filterName, setFilterName] = useState("");
 
-  const toggleMenuCategories = () => {
-    setToggleCategories((prevState) => !prevState);
+  const applyFilter = (name) => {
+    toggleMenu();
+    handleFilter(name);
+    setFilterName(name);
   };
-
-  const setFilter = (filter) => {
-    handleFilter(filter);
-    setTypeCategories(filter);
-    toggleMenuCategories();
+  const toggleMenu = () => {
+    setIsOpen((prev) => !prev);
   };
-  const reset = (e) => {
+  const reset = () => {
     resetFilter();
-    setTypeCategories("");
-    e.stopPropagation();
+    setFilterName("");
+    setIsOpen(false);
   };
 
-  const categoriesMenu = categories.current.map(({ id, name, color }) => (
+  const styleBorderTheme = { border: `1px solid ${border}` };
+  const classBorderFilter = isOpen ? "border-parcial" : "border-complete";
+
+  const dataCategories = categories.current.map(({ id, name, color }) => (
     <div
-      className="categorie"
-      style={{ border: `1.5px solid ${border}` }}
+      className="box-categorie"
       key={id}
-      onClick={() => setFilter(name)}
+      onClick={() => applyFilter(name)}
+      style={styleBorderTheme}
     >
-      <div className="color" style={{ backgroundColor: color }}></div>
+      <div className="circle" style={{ backgroundColor: color }}></div>
       <p>{name}</p>
     </div>
   ));
-
-  const toggleCategoriesClass = toggleCategories
-    ? "categoriesHigh"
-    : typeCategories === ""
-    ? "categoriesDefault"
-    : "categoriesLowFilter";
-
-  const arrow = toggleCategories ? (
-    <IoIosArrowUp />
-  ) : (
-    <IoIosArrowDown />
-  );
-
-  const showDeleteFilter = typeCategories && (
-    <div className="delete-filter">
-      <h2>solo {typeCategories}</h2>
-      <BsTrash className="icon-delete" onClick={(e) => reset(e)} />
+  const menuCategories = isOpen && (
+    <div
+      className="box-filter"
+      style={{
+        ...styleBorderTheme,
+        backgroundColor: backgroundOpacity,
+      }}
+    >
+      {dataCategories}
     </div>
+  );
+  const buttonDeleteFilter = filterName && (
+    <div className="thrash" onClick={reset} style={styleBorderTheme}>
+      <p>{filterName}</p>
+      <BsTrash className="icon-filter" />
+    </div>
+  );
+  const typeArrow = isOpen ? (
+    <IoIosArrowUp className="icon-filter" />
+  ) : (
+    <IoIosArrowDown className="icon-filter" />
   );
 
   return (
     <div
-      id="filter-curiosidades"
-      style={{ border: `1px solid ${border}` }}
-      className={toggleCategoriesClass}
+      id="filter-articles"
+      className={classBorderFilter}
+      style={styleBorderTheme}
     >
-      <div className="categories-text" onClick={toggleMenuCategories}>
-        <h2>Categorias :</h2>
-        {showDeleteFilter}
-        {arrow}
+      <div className="filter" onClick={toggleMenu}>
+        <h3>Filtrar</h3>
+        {typeArrow}
       </div>
-      <div className="categories">{categoriesMenu}</div>
+      {buttonDeleteFilter}
+      {menuCategories}
     </div>
   );
 };
