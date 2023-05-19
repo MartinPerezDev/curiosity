@@ -2,10 +2,10 @@ import React from "react";
 
 import { Home } from "./pages/Home";
 import { Curiosities } from './pages/Curiosities';
+import About from "./pages/About";
 import { Footer } from "./components/Footer/Footer";
 import { Route, Routes } from "react-router-dom";
 import { Error } from "./components/Error/Error";
-import { SobreNosotros } from './components/SobreNosotros/SobreNosotros';
 import { Contacto } from './components/Contacto/Contacto';
 import { NavBarResponsive } from "./components/NavBarResponsive/NavBarResponsive";
 
@@ -20,7 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/curiosidades" element={<Curiosities />} />
-          <Route path="/sobre-nosotros" element={<SobreNosotros />} />
+          <Route path="/sobre-nosotros" element={<About />} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="*" redirect={<Error />} />
         </Routes>

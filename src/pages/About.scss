@@ -1,15 +1,34 @@
-#sobre-nosotros {
+#about {
   padding: 50px 0.5vw;
-  .disclaimer {
+  .title{
+    display: flex;
+    align-items: center;
+    .icon-title{
+      margin-right: 10px;
+      font-size: 2rem;
+    }
+  }
+  .info {
     .authors {
       padding: 5px 0;
-      .author {
+      .box-authors {
+        display: flex;
+        flex-wrap: wrap;
+        .author-card {
+          color: white;
+          background-position: center;
+          background-size: cover;
+          min-width: 300px;
+          min-height: 200px;
+          border: 1px solid white;
+          border-radius: 5px;
+          padding: 10px;
+          margin: 10px;
+        }
       }
     }
   }
-  .text {
-  }
-  .redes {
+  .social-networks {
     display: flex;
     padding: 20px 0;
     .link {
@@ -34,18 +53,18 @@
 }
 
 @media (max-width: 1200px) {
-  #sobre-nosotros {
+  #about {
     width: 95%;
     margin: 0 2.5%;
-    .redes {
+    .social-networks {
       flex-wrap: wrap;
     }
   }
 }
 
 @media (max-width: 750px) {
-  #sobre-nosotros {
-    .redes {
+  #about {
+    .social-networks {
       .link {
         margin: 10px;
         padding: 0 15px;
