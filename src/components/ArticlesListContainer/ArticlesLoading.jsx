@@ -9,14 +9,7 @@ export const ArticlesLoading = () => {
       className="box-card-video box-card-video-loading"
       style={{ border: `2px solid ${color.border}` }}
     >
-      <div className="video">
-        <iframe
-          src={`https://www.youtube.com/embed/asd`}
-          title="El fin del espacio"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
+      <div className="video" style={{ background: color.backgroundTextLoading }}>
       </div>
       <div className="info">
         <h2 style={{ background: color.backgroundTextLoading }}>

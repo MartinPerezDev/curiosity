@@ -12,7 +12,7 @@ export const CategoriesLink = ({
     key: name,
     to: route,
     className: "link",
-    activeClassName: "active",
+    activeclassname: "active",
     style: { color: text },
     ...(type === "mobile" && { onClick: handleToggleMenu }),
   });
