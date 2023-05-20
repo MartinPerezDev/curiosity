@@ -6,7 +6,7 @@ import About from "./pages/About";
 import { Footer } from "./components/Footer/Footer";
 import { Route, Routes } from "react-router-dom";
 import { Error } from "./components/Error/Error";
-import { Contacto } from './components/Contacto/Contacto';
+import { Contact } from "./pages/Contact";
 import { NavBarResponsive } from "./components/NavBarResponsive/NavBarResponsive";
 
 import "./App.scss";
@@ -21,7 +21,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/curiosidades" element={<Curiosities />} />
           <Route path="/sobre-nosotros" element={<About />} />
-          <Route path="/contacto" element={<Contacto />} />
+          <Route path="/contacto" element={<Contact />} />
           <Route path="*" redirect={<Error />} />
         </Routes>
         <Footer />
