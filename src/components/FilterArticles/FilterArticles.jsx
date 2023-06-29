@@ -5,7 +5,7 @@ import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import { ArticlesContext } from "../../context/ArticlesContext";
 import { BsTrash } from "react-icons/bs";
 
-import "./filterArticles.scss";
+import "./FilterArticles.scss";
 
 export const FilterArticles = () => {
   const { handleFilter, resetFilter, categories } = useContext(ArticlesContext);
